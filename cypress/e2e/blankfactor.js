@@ -3,6 +3,9 @@
 
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import BlankFactorPage from "../pages/blankFactorPage";
+import RetirementAndWealthPage from "../pages/retirementAndWealthPage";
+import LetsGetStartedPage from "../pages/letsGetStartedPage";
+
 
 // --- Given ---
 Given("I visit the BlankFactor website", () => {
@@ -19,21 +22,21 @@ When("I navigate to the Retirement and Wealth section", () => {
 });
 
 When(
-  'I hover over the third tile under "Powering innovation in retirement services"',
+  'I hover over the third tile under "Powering innovation in retirement services" and verify card text',
   () => {
-    BlankFactorPage.hoverOverThirdTileUnderPoweringInnovation();
+    RetirementAndWealthPage.hoverOverThirdTileUnderPoweringInnovation();
   }
 );
 
 When("I scroll to the bottom and click on Let's get started", () => {
-  BlankFactorPage.scrollToBottomAndClickLetsGetStarted();
+  RetirementAndWealthPage.scrollToBottomAndClickLetsGetStarted();
 });
 
 // --- Then ---
 Then("I should be on the contact page with the correct URL and title", () => {
-  BlankFactorPage.verifyContactPageUrlAndTitle();
+  LetsGetStartedPage.verifyContactPageUrlAndTitle();
 });
 
 Then("I print the page title in the logs", () => {
-  BlankFactorPage.printPageTitle();
+  LetsGetStartedPage.printPageTitle();
 });
